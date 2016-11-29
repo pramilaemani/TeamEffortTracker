@@ -16,7 +16,7 @@
         initController();
         // getTasks();
         
-        getProjects();
+        getAllProjects();
 
         function initController() {
             // get current user
@@ -40,7 +40,7 @@
             });
         }
 
-        function getProjects(){                                                  
+        function getAllProjects(){                                                  
             TaskService.getAllProjects()
             .then(function (projects){
                 vm.projects = projects;

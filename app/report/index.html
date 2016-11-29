@@ -1,12 +1,12 @@
-<form id="reportsForm">
-<br><br>
+<!-- <form id="reportsForm">
+<br><br> -->
 
-<table id="reportsTable">
+<!-- <table id="reportsTable">
 	<tr>
 		<td style="width: 100px">Project:</td>
 		<td>
 			<select ng-model="vm.task.projectName" ng-options="i.ProjectName for i in vm.projects">
-              <option value="">--Select--</option>              
+              <option value="">Select</option>              
             </select>
 		</td>
 		<td style="width: 100px"></td>
@@ -45,4 +45,34 @@
 		<td>{{task.EstimatedEffort}}</td>
 		<td>{{task.ActualEffort}}</td>
 	</tr>
-</table>
+</table> -->
+<label>Columns to export</label>
+  <select ng-model="export_column_type"</select>
+    <option value='all'>All</option>
+    <option value='visible'>Visible</option>
+  </select>
+  <label>Rows to export?</label>
+  <select ng-model="export_row_type"</select>
+    <option value='all'>All</option>
+    <option value='visible'>Visible</option>
+    <option value='selected'>Selected</option>
+  </select>
+  <label>Format :</label>
+  <select ng-model="export_format"</select>
+    <option value='csv'>CSV</option>
+    <option value='pdf'>PDF</option>
+  </select>
+  <button ng-click="vm.exportData()">Export</button>
+  <div class="custom-csv-link-location">
+    <label>Your CSV will show below:</label>
+    <span class="ui-grid-exporter-csv-link">&nbsp;</span>
+  </div>
+		
+<div ui-grid="gridOptions" class="grid"
+		ui-grid-selection
+		ui-grid-exporter 
+		ui-grid-move-columns 
+		
+		>
+
+</div>

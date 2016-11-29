@@ -2,15 +2,17 @@ body {
     padding: 20px 0;
     background-repeat: no-repeat;
     background-size: 3000px;
-    color: lightgrey;     
+}
 
+.grid {
+    height : 800px;
 }
 
 .flash-message {
     margin-top: 20px;
 }
 
-#menu {
+#menu1 {
     width: auto;
     height: 35px;
     font-size: 16px;
@@ -22,28 +24,28 @@ body {
 
 }
 
-#menu ul {
+#menu1 ul {
     height: auto;
     padding: 8px 0px;
     margin: 0px;
 }
 
-#menu li { 
+#menu1 li { 
 display: inline; 
 padding: 20px; 
 }
 
-#menu a {
+#menu1 a {
     text-decoration: none;
     color: #00F;
     padding: 8px 8px 8px 8px;
 }
-#menu a:hover {
+#menu1 a:hover {
     color: #F90;
     background-color: #FFF;
 }
 
-#menu.logout {
+#menu1.logout {
 	text-align: right;
 }
 
@@ -84,3 +86,6 @@ fieldset {
     border: 1px solid white;
 }
 
+.ui-grid-menu .ui-grid-menu-inner ul li button {
+    display: list-item;
+}

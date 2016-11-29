@@ -11,6 +11,7 @@
         vm.projects=null;
         vm.status=null;
         vm.createTask = createTask;
+        vm.addRow = addRow;
 
         
         getProjects();
@@ -47,7 +48,23 @@
             .then(function (users){
                 vm.users = users;
             });
-        }                     
+        }
+
+        function addRow() {
+        var newService = {
+            "id" : "0",
+            "category" : "public",
+            "exposednamespace" : "http://bced.wallonie.be/services/",
+            "exposedoperation" : "-",
+            "exposedws" : "-",
+            "path" : "//*[local-name()='-']/text()",
+            "provider" : "BCED",
+            "version" : "1.0"
+        };
+        var rowTmp = {};
+        rowTmp.entity = newService;
+        vm.editRow($scope.vm.serviceGrid, rowTmp);
+        };                     
     }
 
 })();
